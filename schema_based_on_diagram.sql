@@ -50,3 +50,10 @@ CREATE TABLE medical_histories_treatments (
       FOREIGN KEY (treatment_id) REFERENCES treatments(id),
       PRIMARY KEY (medical_history_id, treatment_id)
 );
+
+ CREATE INDEX ON medical_histories (patient_id);
+ CREATE INDEX ON invoices (medical_history_id);
+ CREATE INDEX ON invoice_items (invoice_id);
+ CREATE INDEX ON invoice_items (treatment_id);
+ CREATE INDEX ON medical_histories_treatments (medical_history_id);
+ CREATE INDEX ON medical_histories_treatments (treatment_id);
